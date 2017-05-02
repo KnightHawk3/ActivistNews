@@ -1,2 +1,0 @@
-# ActivistNews
-RSS Aggregator

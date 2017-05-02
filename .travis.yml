@@ -5,5 +5,9 @@ python:
 
 install:
     - pip install -r requirements.txt
+
 script:
     - "python manage.py test"
+
+services:
+    - mongodb

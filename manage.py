@@ -2,6 +2,7 @@
 # -*- coding: utf-8 -*-
 from __future__ import unicode_literals
 import os
+import sys
 import click
 from bottle import static_file, Bottle, run, TEMPLATE_PATH
 from beaker.middleware import SessionMiddleware
@@ -114,7 +115,10 @@ def test():
     loader = unittest.TestLoader()
     tests = loader.discover('tests')
     testRunner = unittest.runner.TextTestRunner()
-    testRunner.run(tests)
+    r = testRunner.run(tests)
+    if r.wasSuccessful() == False:
+        sys.exit(1)
+    return 0
 
 
 if __name__ == "__main__":

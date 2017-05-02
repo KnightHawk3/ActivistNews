@@ -10,4 +10,7 @@ script:
     - "python manage.py test"
 
 services:
-    - mongodb
+    - "mongodb"
+
+cache:
+    - "$HOME/.cache/pip"
